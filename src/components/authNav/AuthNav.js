@@ -1,21 +1,27 @@
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const AuthNav = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink exact to="/register" 
-          className="NavLink"
-          activeClassName="NavLinkActive">
+          <NavLink
+            exact
+            to="/register"
+            className="NavLink"
+            activeClassName="NavLinkActive"
+          >
             Registration
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/login"  
-          className="NavLink"
-          activeClassName="NavLinkActive">
+          <NavLink
+            exact
+            to="/login"
+            className="NavLink"
+            activeClassName="NavLinkActive"
+          >
             Login
           </NavLink>
         </li>
@@ -24,4 +30,4 @@ const AuthNav = () => {
   );
 };
 
-export default withRouter(AuthNav);
+export default AuthNav;

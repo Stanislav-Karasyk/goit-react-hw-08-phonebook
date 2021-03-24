@@ -4,12 +4,13 @@ import ContactsPage from '../pages/contactsPage/ContactsPage';
 import HomePage from '../pages/homePage/HomePage';
 import LoginPage from '../pages/loginPage/LoginPage';
 import RegisterPage from '../pages/registerPage/RegisterPage';
-import AuthNav from './authNav/AuthNav';
+import AppBar from './appBar/AppBar';
 
 const App = () => {
   return (
     <>
-      <AuthNav />
+      <AppBar />
+     
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/register" component={RegisterPage} />

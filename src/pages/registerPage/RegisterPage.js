@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-
-export default class RegisterPage extends Component {
+import { connect } from 'react-redux';
+import { register } from '../../redux/auth/auth-operations';
+class RegisterPage extends Component {
   state = {
     name: '',
     email: '',
     password: '',
   };
 
-  handleChange = ({ target: { name, value } }) => {
+  handleChange = e => {
+    const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
+
+    this.props.onRegister(this.state);
 
     this.setState({ name: '', email: '', password: '' });
   };
@@ -21,37 +25,48 @@ export default class RegisterPage extends Component {
     const { name, email, password } = this.state;
     return (
       <div>
-        <h1>Login Page</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label
-            type="name"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-          >
+        <h1>Register Page</h1>
+
+        <form onSubmit={this.handleSubmit} autoComplete="off">
+          <label>
             Name
-            <input />
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
           </label>
-          <label
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          >
+
+          <label>
             Email
-            <input />
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
           </label>
-          <label
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          >
+
+          <label>
             Password
-            <input />
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
           </label>
+
+          <button type="submit">Register</button>
         </form>
       </div>
     );
   }
 }
+
+const mapDispatchToProps = {
+  onRegister: register,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterPage);
