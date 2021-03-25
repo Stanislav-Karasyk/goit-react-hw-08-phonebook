@@ -1,0 +1,2 @@
+(this["webpackJsonpgoit-react-hw-08-phonebook"]=this["webpackJsonpgoit-react-hw-08-phonebook"]||[]).push([[1],{85:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return h}));var c=n(34),o=n(35),r=n(37),i=n(36),a=n(0),u=n(1),h=function(e){Object(r.a)(n,e);var t=Object(i.a)(n);function n(){return Object(c.a)(this,n),t.apply(this,arguments)}return Object(o.a)(n,[{key:"render",value:function(){return Object(u.jsx)("div",{children:Object(u.jsx)("h2",{children:"Home Page"})})}}]),n}(a.Component)}}]);
+//# sourceMappingURL=homePage.673436b7.chunk.js.map

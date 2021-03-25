@@ -1,0 +1,29 @@
+{
+  "files": {
+    "contactsPage.js": "/goit-react-hw-08-phonebook/static/js/contactsPage.14ca93fd.chunk.js",
+    "contactsPage.js.map": "/goit-react-hw-08-phonebook/static/js/contactsPage.14ca93fd.chunk.js.map",
+    "homePage.js": "/goit-react-hw-08-phonebook/static/js/homePage.673436b7.chunk.js",
+    "homePage.js.map": "/goit-react-hw-08-phonebook/static/js/homePage.673436b7.chunk.js.map",
+    "loginPage.js": "/goit-react-hw-08-phonebook/static/js/loginPage.19a99f73.chunk.js",
+    "loginPage.js.map": "/goit-react-hw-08-phonebook/static/js/loginPage.19a99f73.chunk.js.map",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.9f2bbc6f.chunk.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.77f0e29f.chunk.js",
+    "main.js.map": "/goit-react-hw-08-phonebook/static/js/main.77f0e29f.chunk.js.map",
+    "registerPage.js": "/goit-react-hw-08-phonebook/static/js/registerPage.e38afd1e.chunk.js",
+    "registerPage.js.map": "/goit-react-hw-08-phonebook/static/js/registerPage.e38afd1e.chunk.js.map",
+    "runtime-main.js": "/goit-react-hw-08-phonebook/static/js/runtime-main.73597de0.js",
+    "runtime-main.js.map": "/goit-react-hw-08-phonebook/static/js/runtime-main.73597de0.js.map",
+    "static/js/6.58b91b80.chunk.js": "/goit-react-hw-08-phonebook/static/js/6.58b91b80.chunk.js",
+    "static/js/6.58b91b80.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/6.58b91b80.chunk.js.map",
+    "index.html": "/goit-react-hw-08-phonebook/index.html",
+    "static/css/main.9f2bbc6f.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/main.9f2bbc6f.chunk.css.map",
+    "static/js/6.58b91b80.chunk.js.LICENSE.txt": "/goit-react-hw-08-phonebook/static/js/6.58b91b80.chunk.js.LICENSE.txt",
+    "static/media/blank-profile-picture.efadb13d.webp": "/goit-react-hw-08-phonebook/static/media/blank-profile-picture.efadb13d.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73597de0.js",
+    "static/js/6.58b91b80.chunk.js",
+    "static/css/main.9f2bbc6f.chunk.css",
+    "static/js/main.77f0e29f.chunk.js"
+  ]
+}
