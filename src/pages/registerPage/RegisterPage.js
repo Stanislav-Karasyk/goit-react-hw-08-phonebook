@@ -26,7 +26,7 @@ class RegisterPage extends Component {
     return (
       <div>
         <h1>Register Page</h1>
-
+        <h2>{this.props.error}</h2>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <label>
             Name
@@ -64,9 +64,12 @@ class RegisterPage extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  error: state.auth.error,
+});
 
 const mapDispatchToProps = {
   onRegister: register,
 };
 
-export default connect(null, mapDispatchToProps)(RegisterPage);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);

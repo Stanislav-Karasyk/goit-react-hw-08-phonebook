@@ -15,4 +15,9 @@ body{
 }
 .NavLinkActive{
   color: blue;
+  font-weight: 700;
+}
+
+.list{
+  list-style-type: none;
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const AuthNav = () => {
   return (
     <nav>
-      <ul>
+      <ul className="list">
         <li>
           <NavLink
             exact

@@ -11,7 +11,7 @@ const ContactList = ({ contacts, deleteContact, loading }) => {
   return (
     <>
     {loading && <h2>Loading...</h2>}
-      <ul>
+      <ul className="list">
         {contacts.map(({ name, id, number }) => (
           <li key={id}>
             <p>

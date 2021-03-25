@@ -18,7 +18,7 @@ class LoginPage extends Component {
 
     this.props.onLogin(this.state);
 
-    this.setState({name: '', email: '', password: '' });
+    this.setState({ name: '', email: '', password: '' });
   };
 
   render() {
@@ -26,6 +26,7 @@ class LoginPage extends Component {
     return (
       <div>
         <h1>Login Page</h1>
+        <h2>{this.props.error}</h2>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <label>
             Email
@@ -53,8 +54,12 @@ class LoginPage extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  error: state.auth.error,
+});
+
 const mapDispatchToProps = {
   onLogin: logIn,
 };
 
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

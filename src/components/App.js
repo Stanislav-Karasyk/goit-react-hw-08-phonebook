@@ -3,13 +3,26 @@ import { connect } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import { getCurrentUser } from '../redux/auth/auth-operations';
 import AppBar from './appBar/AppBar';
+import Container from '../components/container/Container';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
-const HomePage = lazy(() => import('../pages/homePage/HomePage'));
-const RegisterPage = lazy(() => import('../pages/registerPage/RegisterPage'));
-const LoginPage = lazy(() => import('../pages/loginPage/LoginPage'));
-const ContactsPage = lazy(() => import('../pages/contactsPage/ContactsPage'));
+const HomePage = lazy(() =>
+  import('../pages/homePage/HomePage' /* webpackChunkName: "homePage" */),
+);
+const RegisterPage = lazy(() =>
+  import(
+    '../pages/registerPage/RegisterPage' /* webpackChunkName: "registerPage" */
+  ),
+);
+const LoginPage = lazy(() =>
+  import('../pages/loginPage/LoginPage' /* webpackChunkName: "loginPage" */),
+);
+const ContactsPage = lazy(() =>
+  import(
+    '../pages/contactsPage/ContactsPage' /* webpackChunkName: "contactsPage" */
+  ),
+);
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +31,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <Container>
         <AppBar />
         <Suspense fallback={<h1>Loading...</h1>}>
           <Switch>
@@ -42,7 +55,7 @@ class App extends Component {
             />
           </Switch>
         </Suspense>
-      </>
+      </Container>
     );
   }
 }

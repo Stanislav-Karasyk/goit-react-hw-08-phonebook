@@ -12,6 +12,7 @@ import {
   deleteContactSuccess,
   deleteContactError,
 } from './contact-actions';
+import { logoutSuccess } from '../auth/auth-actions';
 
 const contacts = createReducer([], {
   [fetchContactSuccess]: (_, { payload }) => payload,
@@ -19,6 +20,7 @@ const contacts = createReducer([], {
   [deleteContactSuccess]: (state, { payload }) => [
     ...state.filter(item => item.id !== Number(payload)),
   ],
+  [logoutSuccess]: () => [],
 });
 
 const filter = createReducer('', {
@@ -36,21 +38,18 @@ const loading = createReducer(false, {
   [deleteContactSuccess]: () => false,
   [deleteContactError]: () => false,
 });
-// ================
-// const hendleError = (_, { payload }) => payload.response.data;
-// const clearError = () => null;
 
-// const error = createReducer(null, {
-//   [fetchContactRequest]: clearError,
-//   [fetchContactError]: hendleError,
-//   [createContactRequest]: clearError,
-//   [createContactError]: hendleError,
-//   [deleteContactRequest]: clearError,
-//   [deleteContactError]: hendleError,
-// });
-// ==============
+const hendleError = (_, { payload }) => payload.response.data;
+const clearError = () => null;
 
-const error = createReducer(null, {});
+const error = createReducer(null, {
+  [fetchContactRequest]: clearError,
+  [fetchContactError]: hendleError,
+  [createContactRequest]: clearError,
+  [createContactError]: hendleError,
+  [deleteContactRequest]: clearError,
+  [deleteContactError]: hendleError,
+});
 
 export default combineReducers({
   contacts,

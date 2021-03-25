@@ -5,7 +5,7 @@ import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
 const Navigation = ({ isAuthenticated }) => (
   <nav>
-    <ul>
+    <ul className="list">
       <li>
         <NavLink
           to="/"
