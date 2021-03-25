@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
-import ContactsPage from '../pages/contactsPage/ContactsPage';
-import HomePage from '../pages/homePage/HomePage';
-import LoginPage from '../pages/loginPage/LoginPage';
-import RegisterPage from '../pages/registerPage/RegisterPage';
+import { Switch } from 'react-router-dom';
 import { getCurrentUser } from '../redux/auth/auth-operations';
 import AppBar from './appBar/AppBar';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+
+const HomePage = lazy(() => import('../pages/homePage/HomePage'));
+const RegisterPage = lazy(() => import('../pages/registerPage/RegisterPage'));
+const LoginPage = lazy(() => import('../pages/loginPage/LoginPage'));
+const ContactsPage = lazy(() => import('../pages/contactsPage/ContactsPage'));
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.onGetCurrentUser();
   }
 
@@ -17,12 +20,28 @@ class App extends Component {
     return (
       <>
         <AppBar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/contacts" component={ContactsPage} />
-        </Switch>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Switch>
+            <PublicRoute exact path="/" component={HomePage} />
+            <PublicRoute
+              path="/register"
+              restricted
+              redirectTo="/contacts"
+              component={RegisterPage}
+            />
+            <PublicRoute
+              path="/login"
+              restricted
+              redirectTo="/contacts"
+              component={LoginPage}
+            />
+            <PrivateRoute
+              path="/contacts"
+              redirectTo="/login"
+              component={ContactsPage}
+            />
+          </Switch>
+        </Suspense>
       </>
     );
   }

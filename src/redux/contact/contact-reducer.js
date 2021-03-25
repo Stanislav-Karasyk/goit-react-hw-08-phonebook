@@ -36,18 +36,21 @@ const loading = createReducer(false, {
   [deleteContactSuccess]: () => false,
   [deleteContactError]: () => false,
 });
+// ================
+// const hendleError = (_, { payload }) => payload.response.data;
+// const clearError = () => null;
 
-const hendleError = (_, { payload }) => payload.response.data;
-const clearError = () => null;
+// const error = createReducer(null, {
+//   [fetchContactRequest]: clearError,
+//   [fetchContactError]: hendleError,
+//   [createContactRequest]: clearError,
+//   [createContactError]: hendleError,
+//   [deleteContactRequest]: clearError,
+//   [deleteContactError]: hendleError,
+// });
+// ==============
 
-const error = createReducer(null, {
-  [fetchContactRequest]: clearError,
-  [fetchContactError]: hendleError,
-  [createContactRequest]: clearError,
-  [createContactError]: hendleError,
-  [deleteContactRequest]: clearError,
-  [deleteContactError]: hendleError,
-});
+const error = createReducer(null, {});
 
 export default combineReducers({
   contacts,
